@@ -151,18 +151,37 @@ const BookModal = ({ book, isOpen, onClose }) => {
 };
 
 // Header
-const Header = () => (
-  <header className="bg-white shadow-sm border-b sticky top-0 z-50">
-    <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
-      <h1 className="text-2xl font-bold text-gray-800">📚 Indian Books</h1>
-      <nav className="flex items-center gap-6">
-        <button className="text-gray-700 hover:text-blue-600 font-medium transition-colors">Home</button>
-        <button className="text-gray-700 hover:text-blue-600 font-medium transition-colors">Store</button>
-        <button className="px-4 py-1 bg-blue-600 text-white rounded hover:bg-blue-700 transition">Login</button>
-      </nav>
-    </div>
-  </header>
-);
+const Header = () => {
+  const handleClick = (section) => {
+    alert(`You clicked on ${section}`);
+  };
+
+  return (
+    <header className="bg-white shadow-sm border-b sticky top-0 z-50">
+      <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+        <h1 className="text-2xl font-bold text-gray-800">📚 Indian Books</h1>
+        <nav className="flex items-center gap-6">
+          <button
+            onClick={() => handleClick("Home")}
+            className="text-gray-700 hover:text-blue-600 font-medium transition-colors"
+          >
+            Home
+          </button>
+          <button
+            onClick={() => handleClick("Store")}
+            className="text-gray-700 hover:text-blue-600 font-medium transition-colors"
+          >
+            Store
+          </button>
+          <button className="px-4 py-1 bg-blue-600 text-white rounded hover:bg-blue-700 transition">
+            Login
+          </button>
+        </nav>
+      </div>
+    </header>
+  );
+};
+
 
 // App Component
 const App = () => {
